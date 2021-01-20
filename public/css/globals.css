@@ -1,3 +1,11 @@
+:root {
+    --acc: #e0afa0;
+    --bg: #f4f3ee;
+    --bg-dark: #bcb8b1;
+    --sec: #8a817c;
+    --sec-dark: #463f3a;
+}
+
 html, body {
     height: 100%;
     width: 100%;
@@ -5,6 +13,7 @@ html, body {
     margin: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff;
 }
 
 *, *::before, *::after {

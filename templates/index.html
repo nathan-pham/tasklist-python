@@ -9,12 +9,31 @@
     <meta name="keywords" content="Nathan, Pham, flask, python"/>
     <meta property="og:author" content="Nathan Pham"/>
     <meta property="og:description" content="A simple tasklist app built with Python Flask"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" />
     <link rel="stylesheet" href="/css/globals.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <script defer src="/js/app.js"></script>
     <script defer src="/js/index.js"></script>
 </head>
 <body>
-    Hi
+    <div id="app">
+        <h1>Tasklist App</h1>
+        <p>A simple tasklist app built with Python and Flask</p>
+        <div class="add-task">
+            <input type="text" spellcheck="off" autocomplete="false" placeholder="Write something..." />
+            <button>Add task</button>
+        </div>
+        <main class="task-wrapper">
+            {% for task in tasks %}
+                <div class="task" data-status="{{ task.done }}" data-id="{{ task.id }}">
+                    <span>{{ task.content }}</span>
+                    <div class="task-options">
+                        <i class="far fa-trash-alt"></i>
+                        <i class="far fa-calendar-check"></i>
+                    </div>
+                </div>
+            {% endfor %}
+        </main>
+    </div>
 </body>
 </html>
