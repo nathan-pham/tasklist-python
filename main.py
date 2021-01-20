@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, static_url_path='/')
+app = Flask(__name__, static_url_path='/', static_folder="public", template_folder="templates")
+
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///tasklist-python.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = True
 db = SQLAlchemy(app)
